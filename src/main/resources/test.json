@@ -1,3 +1,3 @@
 {"customer": {"Age":["<18","21-24"],"frequency":["Annually","Monthly"],"Income":["<$25K","$100K+"],"ValueSegment":["HV","NHV"]}},
-{"product": {"brand123":["pink","Red"],"category":["Bra","Panty"],"class":["WEW","Sports","T-Shirt"],"styles":["top10styles","top11-20styles"],"colorfamily":["solids","prints"]}},
+{"product": {"brand123":["pink","Red"],"category":["Bra","Panty"],"class1":["WEW","Sports","T-Shirt"],"styles":["top10styles","top11-20styles"],"colorfamily":["solids","prints"]}},
 {"location": {"tiers":["<18","21-24"],"top10stores":["Annually","Monthly"],"region":["<$25K","$100K+"],"StoreName":["HV","NHV"]}}
