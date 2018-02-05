@@ -34,4 +34,5 @@ object RestaurantApp extends Boot {
   val	sqlDF	=	spark.sql(
     "SELECT	a.name,	b.name,	a.phone,	b.stdphone	from	rest1Table	a,	rest2Table	b	where	a.phone	=	b.stdphone")
   sqlDF.show()
+
 }
