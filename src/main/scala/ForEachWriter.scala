@@ -3,6 +3,7 @@ import java.util.concurrent.TimeUnit
 
 import org.apache.spark.sql.ForeachWriter
 import org.apache.spark.sql.streaming.{OutputMode, ProcessingTime, Trigger}
+import util.Boot
 
 object ForEachWriter extends Boot {
 

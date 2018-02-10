@@ -1,5 +1,7 @@
 import java.util.UUID
 
+import util.Boot
+
 object KafkaSpark extends Boot {
 
   import spark.implicits._

@@ -1,5 +1,6 @@
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
+import util.Boot
 
 object StructuredStreaming extends Boot {
 

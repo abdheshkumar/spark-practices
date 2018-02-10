@@ -1,5 +1,6 @@
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, Dataset}
+import util.Boot
 
 object DataSetApp extends Boot {
 

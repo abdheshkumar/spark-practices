@@ -1,4 +1,5 @@
 import org.apache.spark.sql.streaming.Trigger
+import util.Boot
 
 object SparkKafkaAggregation extends Boot {
 

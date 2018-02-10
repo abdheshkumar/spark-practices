@@ -11,7 +11,8 @@ lazy val root = Project("root", file("."))
       "org.apache.spark" %% "spark-sql" % sparkV,
       "org.apache.spark" %% "spark-streaming" % sparkV,
       "org.apache.spark" %% "spark-mllib" % sparkV,
-      "org.apache.spark" %% "spark-sql-kafka-0-10" % sparkV
+      "org.apache.spark" %% "spark-sql-kafka-0-10" % sparkV,
+      "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkV
     )
   )
 

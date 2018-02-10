@@ -1,5 +1,6 @@
 import org.apache.spark.sql.Dataset
 import org.apache.spark.sql.expressions.UserDefinedFunction
+import util.Boot
 
 object RestaurantApp extends Boot {
 

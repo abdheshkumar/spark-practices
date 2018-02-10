@@ -1,6 +1,7 @@
 import java.util.UUID
 
 import org.apache.spark.sql.ForeachWriter
+import util.Boot
 
 object KafkaDataFrame extends Boot {
 

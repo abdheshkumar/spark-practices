@@ -1,6 +1,7 @@
 import java.util.UUID
 
 import org.apache.spark.sql.streaming.ProcessingTime
+import util.Boot
 
 object KafkaToHdfsUsingSpark extends Boot {
 
@@ -15,7 +16,6 @@ object KafkaToHdfsUsingSpark extends Boot {
     .selectExpr("topic", "CAST(value AS STRING)")
 
   val downstream = upstream
-    .coalesce(1)
     .writeStream
     .partitionBy("topic") // Partition by topic. it will create directory by topic name topic=Airport,topic=Carriers,topic=Planedata etc
     .format("csv")
