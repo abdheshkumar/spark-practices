@@ -1,0 +1,118 @@
+{
+"fileSize_In_MB" : "200" ,
+
+"target_path" : "hdfs://dps/config/output" ,
+
+"colDetails" : {
+	"globe_imsi": {
+		"type" : "alphanumeric",
+		"maxLength" : "20",
+		"Nullable" : "false"
+		},
+	"globe_msisdn": {
+		"type" : "alphanumeric", 
+		"maxLength" : "16",
+		"Nullable" : "false"
+		},
+	"hashed_email": {
+		"type" : "alphanumeric", 
+		"maxLength" : "16", 
+		"Nullable" : "false"
+		},
+	"age": {
+		"type" : "Integer",
+		"maxLength" : "99", 
+		"Nullable" : "true"
+		},
+	"gender":{
+		"type" : "String",
+		"values" : ["Female", "Male", "Unknown"],
+		"Nullable" : "true"
+		},
+	"post_code":{
+		"type" : "Integer",
+		"values" : ["4347","3025","3019","3191","2263","4311","3008","3010","3058","4561","3183","3003","4567","3143","3004","3207","3165","3054","3182","3065","5540","4565","4807","3187","3192","4575","3032","3148"],
+		"Nullable" : "true"
+		},
+	"city":{
+		"type" : "String",
+		"values" : ["ALAMINOS","ANGELES","ANTIPOLO","BACOLOD","BACOOR","BAGO","BAGUIO","BAIS","BALANGA","BATAC","BATANGAS","BAYAWAN","BAYBAY","BAYUGAN","BIÑAN","BISLIG","BOGO","BORONGAN","BUTUAN","CABADBARAN","CABANATUAN","CABUYAO"],
+		"Nullable" : "true"
+		},
+	"occupation":{
+		"type" : "String",
+		"values" : ["ADMINISTRATIVE STAFF","CALL CENTER AGENTS","GOVERNMENT EMPLOYEE","MANAGER/DIRECTOR","OWNER","PRESIDENT/COO/CEO"],
+		"Nullable" : "true"
+		},
+	"marital_status":{
+		"type" : "String",
+		"values" : ["Single", "Married"],
+		"Nullable" : "true"
+		},
+	"income_level":{
+		"type" : "String",
+		"values" : ["LOW","Medium","High","VERY HIGH"],
+		"Nullable" : "true"
+		},
+	"cfu":{
+		"type" : "String",
+		"values" : ["CONSUMER", "SMALL BUSINESS"],
+		"Nullable" : "true"
+		},
+	"current_plan_type":{
+		"type" : "Integer",
+		"values" : ["ThePLAN PLUS 599", "ThePLAN PLUS 799" ,"ThePLAN PLUS 999" , "ThePLAN PLUS 1299","ThePLAN PLUS 1499","ThePLAN PLUS 1799","ThePLAN PLUS 1999","ThePLAN PLUS 2499" ,"ThePLAN 599","ThePLAN 799","ThePLAN 999","ThePLAN 1299","ThePLAN 1499","ThePLAN 1799","ThePLAN 1999","ThePLAN 2499","ThePLATINUM Plan 3799", "ThePLATINUM Plan 4999","ThePLATINUM Plan 7999"],
+		"Nullable" : "true"
+		},
+	"current_plan_price":{
+		"type" : "String",
+		"values" : ["599","799","999","1299","1499","1799","1999","2499","3799","4999","7999"],
+		"Nullable" : "true"
+		},
+	"handset_model":{
+		"type" : "String",
+		"values" : ["APPLE","HUAWEI","LENOVO","LG MOBILE","OPPO","SAMSUNG","SONY","VIVO"],
+		"Nullable" : "true"
+		},
+	"contract_type":{
+		"type" : "String",
+		"values" : ["POSTPAID","POSTPAID THEPLAN","POSTPAID THEPLAN PLUS","THEPLATINUM"],
+		"Nullable" : "true"
+		},
+	"contract_expiry_date":{
+		"type" : "String",
+		"values" : ["1 MONTH","2 MONTHS","3 MONTHS","4 MONTHS","5 MONTHS","6 MONTHS"],
+		"Nullable" : "true"
+		},
+	"service_tenure_in_months":{
+		"type" : "String",
+		"values" : ["1 MONTH","2 MONTHS","3 MONTHS","4 MONTHS","5 MONTHS","6 MONTHS"],
+		"Nullable" : "true"
+		},
+	"contract_duration_in_months":{
+		"type" : "String",
+		"values" : ["0 MONTH","12 MONTHS","24 MONTHS"],
+		"Nullable" : "true"
+		},
+	"last_month_spend":{
+		"type" : "Integer",
+		"maxLength" : "99", 
+		"Nullable" : "true"
+		},
+	"average_last_three_months_spend":{
+		"type" : "Integer",
+		"maxLength" : "99", 
+		"Nullable" : "true"
+		},
+	"last_month_data_usage":{
+		"type" : "Integer",
+		"maxLength" : "99", 
+		"Nullable" : "true"
+		},
+	"payment_type":{
+		"type" : "String",
+		"values" : ["Cash","Check Local","Credit Card","Online Banking","Online-Credit Card"],
+		"Nullable" : "true"
+		}
+	}
+}
