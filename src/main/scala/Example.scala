@@ -13,7 +13,6 @@ object Example extends App {
   // For implicit conversions like converting RDDs to DataFrames
   import spark.implicits._
 
-  case class Test(C1: String, C3: String, TurnIdCount: Long)
 
   /* val r = spark
      .sparkContext
@@ -21,13 +20,25 @@ object Example extends App {
      .collect().mkString
    println(r)*/
 
-  val metricDf: DataFrame = spark.createDataFrame(List(Test("TEL_GLB_GENDER", null, 1), Test(null, "TEL_GLB_GENDER", 3)))
+  case class Test(C1: String, C3: String, TurnIdCount: Long, c: Int)
+  val metricDf: DataFrame = spark.createDataFrame(
+    List(
+      Test("TEL_GLB_GENDER", null, 1, 4),
+      Test(null, "TEL_GLB_GENDER", 3, 5)))
   val columns = Seq("C1", "C3")
   val result = metricDf
-    .select(concat_ws(" ", columns.map(col): _*) as "data", col("TurnIdCount"))
+    .select(concat_ws(" ", columns.map(col): _*) as "data", col("TurnIdCount"),col("c"))
     .groupBy("data")
-    .agg(sum($"TurnIdCount"))
+    .agg(sum($"TurnIdCount" + $"c").as("turn_id_count"))
   result.show()
+
+  /*
+  +--------------+-------------+
+|          data|turn_id_count|
++--------------+-------------+
+|TEL_GLB_GENDER|            4|
++--------------+-------------+
+   */
 
   /*val df = spark.read.json("src/main/resources/test.json").toDF("customer", "location", "product")
 
