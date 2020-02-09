@@ -4,17 +4,24 @@ object AllAboutScalaApp extends App {
 
   //Reading csv file
 
-  val ss = SparkSession.builder().appName("AllAboutScalaApp").master("local[*]").getOrCreate()
+  val ss = SparkSession
+    .builder()
+    .appName("AllAboutScalaApp")
+    .master("local[*]")
+    .getOrCreate()
 
   //val csvDf: DataFrame = ss.read.csv("employee.csv").toDF("name", "rollno", "address")
 
   val csvDf: DataFrame = ss.read
-      .format("csv")
+    .format("csv")
     .option("inferSchema", "true")
     .option("header", "true")
     .load("employee_header.csv")
 
-  val filterDf: Dataset[Row] = ss.read.csv("employee.csv").toDF("name", "rollno", "address").filter(("rollno < 500"))
+  val filterDf: Dataset[Row] = ss.read
+    .csv("employee.csv")
+    .toDF("name", "rollno", "address")
+    .filter(("rollno < 500"))
 
   import org.apache.spark.sql.functions._
 
@@ -41,6 +48,5 @@ object AllAboutScalaApp extends App {
   ss.sql("select * from employee").show
 
   ss.sql("select * from employee order by name desc").show
-
 
 }
