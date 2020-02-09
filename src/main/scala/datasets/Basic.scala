@@ -8,9 +8,10 @@ import org.apache.spark.sql.SparkSession
 //
 object Basic {
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]) = {
     val spark =
-      SparkSession.builder()
+      SparkSession
+        .builder()
         .appName("Dataset-Basic")
         .master("local[4]")
         .getOrCreate()
@@ -42,7 +43,8 @@ object Basic {
     println("*** size of the range")
     println(s2.size)
 
-    val tuples = Seq((1, "one", "un"), (2, "two", "deux"), (3, "three", "trois"))
+    val tuples =
+      Seq((1, "one", "un"), (2, "two", "deux"), (3, "three", "trois"))
     val tupleDS = tuples.toDS()
 
     println("*** Tuple Dataset types")

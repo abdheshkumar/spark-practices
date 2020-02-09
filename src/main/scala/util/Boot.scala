@@ -2,8 +2,8 @@ package util
 
 import org.apache.spark.sql.SparkSession
 
-trait Boot extends App {
-  val spark = SparkSession.builder
+trait Boot {
+  val spark: SparkSession = SparkSession.builder
     .master("local[*]")
     .appName("app-name")
     .config("spark.executor.cores", "2")

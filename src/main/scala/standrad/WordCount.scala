@@ -7,12 +7,15 @@ object WordCount extends SparkBoot {
 
   override def appName: String = "word count"
 
-  override def run(spark: SparkSession, config: UsageConfig, storage: Storage): Unit = {
+  override def run(
+      spark: SparkSession,
+      config: UsageConfig,
+      storage: Storage
+  ): Unit = {
 
     /**
       * This function only does I/O, no logic
       */
-
     val logs = storage.chatLogs
 
     val res = transform(spark, logs, config.date)
@@ -20,7 +23,12 @@ object WordCount extends SparkBoot {
     storage.writeToParquet(res, s"s3://${config.date}/words")
   }
 
-  def transform(spark: SparkSession, logs: Dataset[ChatLog], date: String): Dataset[WordCountSchema] = {
+  def transform(
+      spark: SparkSession,
+      logs: Dataset[ChatLog],
+      date: String
+  ): Dataset[WordCountSchema] = {
+
     /**
       * Any logic is implemented in transform. No side effects here!
       * Testability is key :)
@@ -29,10 +37,12 @@ object WordCount extends SparkBoot {
 
     logs
       .filter($"date" === date)
-      .flatMap(x => x.text
-        .replaceAll("""[\p{Punct}&&[^.]]""", "")
-        .replaceAll("\n", " ")
-        .split(" "))
+      .flatMap(x =>
+        x.text
+          .replaceAll("""[\p{Punct}&&[^.]]""", "")
+          .replaceAll("\n", " ")
+          .split(" ")
+      )
       .map(x => (x, 1))
       .groupByKey(_._1)
       .reduceGroups((x, y) => (x._1, x._2 + y._2))
