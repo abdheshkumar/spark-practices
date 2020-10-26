@@ -1,0 +1,1 @@
+{"type":"struct","fields":[{"name":"name","type":"string","nullable":true,"metadata":{}},{"name":"salary","type":"long","nullable":true,"metadata":{}}]}

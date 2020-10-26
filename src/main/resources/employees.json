@@ -1,4 +1,4 @@
-{"name":"Michael", "salary":3000}
-{"name":"Andy", "salary":4500}
-{"name":"Justin", "salary":3500}
-{"name":"Berta", "salary":4000}
+{"name":"Michael", "salary":3000, "address": {"street": "Dagmar", "postcode": "HA9 89A"}}
+{"name":"Andy", "salary":4500,"address": {"street": "Dagmar", "postcode": "HA9 89A"}}
+{"name":"Justin", "salary":3500,"address": {"street": "Dagmar", "postcode": "HA9 89A"}}
+{"name":"Berta", "salary":4000,"address": {"street": "Dagmar", "postcode": "HA9 89A"}}

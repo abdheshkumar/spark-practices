@@ -1,6 +1,6 @@
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 
-object DatasetApp extends App {
+object DatasetApp02 extends App {
 
   val ss = SparkSession.builder().appName("TestApp").master("local[*]").getOrCreate()
   import ss.implicits._

@@ -32,5 +32,5 @@ object DataSetExample extends App {
 
   val df = spark.read.json("src/main/resources/test.json").as[Test]
   df.printSchema()
-  df.collect().foreach(println)
+  //df.collect().foreach(println)
 }

@@ -1,7 +1,7 @@
 import java.util.UUID
 
-import org.apache.spark.sql.streaming.ProcessingTime
 import util.Boot
+import org.apache.spark.sql.streaming.Trigger
 
 object KafkaToHdfsUsingSpark extends Boot {
 
@@ -21,7 +21,7 @@ object KafkaToHdfsUsingSpark extends Boot {
     .format("csv")
     .option("path", "/tmp/data")
     .outputMode("append")
-    .trigger(ProcessingTime(3000))
+    .trigger(Trigger.ProcessingTime(3000))
     .option("checkpointLocation", checkpointLocation)
     .start()
 
