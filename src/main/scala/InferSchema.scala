@@ -54,21 +54,13 @@ object InferSchema extends App with Boot {
   }
 
   // Thread.sleep(Int.MaxValue)
-  time("inferSchema = false") {
-    val schema = StructType(
-      List(
-        StructField("name", StringType, false),
-        StructField("department", StringType, false),
-        StructField("years_of_experience", IntegerType, false),
-        StructField("dob", TimestampType, false)
-      )
-    )
+  time("inferSchema = false, derive schema from an encoder") {
+    implicit val encoderDeveloper = Encoders.product[Developer]
     val developerDF = spark.read
       .option("header", "true")
-      .schema(schema)
-      //.option("timestampFormat", "yyyy-MM-dd")
+      .schema(encoderDeveloper.schema)
       .csv("src/main/resources/engineer.csv")
-    import spark.implicits._
+    
     val developerDS = developerDF.as[Developer]
     developerDS.collect().toList.foreach(println)
   }
