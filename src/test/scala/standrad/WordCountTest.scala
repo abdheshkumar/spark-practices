@@ -1,10 +1,10 @@
 package standrad
 
-import org.scalatest.FlatSpec
+import org.scalatest.flatspec.AnyFlatSpec
 import standrad.storage.{ChatLog, WordCountSchema}
 import util.SharedSparkSession
 
-class WordCountTest extends FlatSpec with SharedSparkSession {
+class WordCountTest extends AnyFlatSpec with SharedSparkSession {
 
   import spark.implicits._
 
