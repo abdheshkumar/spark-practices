@@ -4,7 +4,7 @@ val sparkV = "3.5.0"
 val scalaTestV = "3.2.17"
 val scalacheckV = "1.17.0"
 
-lazy val root = Project("root", file("."))
+lazy val root = project.in(file("."))
   .settings(
     name := "spark-practices",
     version := "0.1",
