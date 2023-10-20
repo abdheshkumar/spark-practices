@@ -17,7 +17,7 @@ lazy val root = Project("root", file("."))
       //"com.datastax.spark" %% "spark-cassandra-connector" % sparkV,
       "org.apache.spark" %% "spark-sql-kafka-0-10" % sparkV, //Structured Streaming + Kafka Integration Guide
       "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkV, //spark-streaming-kafka
-      "com.github.scopt" %% "scopt" % "4.0.1",
+      "com.github.scopt" %% "scopt" % "4.1.0",
       "org.scalatest" %% "scalatest" % scalaTestV % Test,
       "org.scalacheck" %% "scalacheck" % scalacheckV % Test
     )
