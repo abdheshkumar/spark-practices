@@ -1,6 +1,6 @@
 import sbt.Keys.version
 
-val sparkV = "3.2.1"
+val sparkV = "3.5.0"
 val scalaTestV = "3.2.17"
 val scalacheckV = "1.17.0"
 
