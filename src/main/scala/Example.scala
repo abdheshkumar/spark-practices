@@ -11,6 +11,7 @@ object Example extends App {
     .config("spark.some.config.option", "some-value")
     .getOrCreate()
   // For implicit conversions like converting RDDs to DataFrames
+
   import spark.implicits._
 
 
@@ -21,16 +22,26 @@ object Example extends App {
    println(r)*/
 
   case class Test(C1: String, C3: String, TurnIdCount: Long, c: Int)
+
   val metricDf: DataFrame = spark.createDataFrame(
     List(
       Test("TEL_GLB_GENDER", null, 1, 4),
-      Test(null, "TEL_GLB_GENDER", 3, 5)))
-  val columns = Seq("C1", "C3")
-  val result = metricDf
-    .select(concat_ws(" ", columns.map(col): _*) as "data", col("TurnIdCount"),col("c"))
-    .groupBy("data")
-    .agg(sum($"TurnIdCount" + $"c").as("turn_id_count"))
-  result.show()
+      Test("test something", "TEL_GLB_GENDER", 3, 5)))
+
+  metricDf.show()
+
+  val selectDF = metricDf
+    .filter(col("c") === 4)
+    .select("C1")
+  selectDF.show()
+  /*
+    val columns = Seq("C1", "C3")
+    val result = metricDf
+      .select(concat_ws(" ", columns.map(col): _*) as "data", col("TurnIdCount"),col("c"))
+      .groupBy("data")
+      .agg(sum($"TurnIdCount" + $"c").as("turn_id_count"))
+    result.show()
+  */
 
   /*
   +--------------+-------------+
