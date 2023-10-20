@@ -33,7 +33,7 @@ object WindowAggApp  extends App{
 
   val byHTokens = Window.partitionBy($"depName" startsWith "d")
 
-  val byDepnameSalaryDesc = Window.partitionBy('depname).orderBy('salary desc)
+  val byDepnameSalaryDesc = Window.partitionBy('depname).orderBy('salary.desc)
 
   val rankByDepname = rank().over(byDepnameSalaryDesc)
   empsalary.select('*, rankByDepname as 'rank).show
