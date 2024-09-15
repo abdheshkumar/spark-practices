@@ -2,7 +2,7 @@ import sbt.Keys.version
 
 val sparkV = "3.5.2"
 val scalaTestV = "3.2.19"
-val scalacheckV = "1.18.0"
+val scalacheckV = "1.18.1"
 
 lazy val root = project.in(file("."))
   .settings(
