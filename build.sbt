@@ -8,7 +8,7 @@ lazy val root = project.in(file("."))
   .settings(
     name := "spark-practices",
     version := "0.1",
-    scalaVersion := "2.13.14",
+    scalaVersion := "2.13.15",
     libraryDependencies ++= Seq(
       "org.apache.spark" %% "spark-core" % sparkV,
       "org.apache.spark" %% "spark-sql" % sparkV,
